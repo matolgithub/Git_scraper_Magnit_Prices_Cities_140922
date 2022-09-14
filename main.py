@@ -12,8 +12,7 @@ def collect_data(city_code='2398'):
     ua = UserAgent()
 
     headers = {
-        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,\
-        application/signed-exchange;v=b3;q=0.9',
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
         'User-Agent': ua.random
     }
 
@@ -34,7 +33,7 @@ def collect_data(city_code='2398'):
     city = soup.find('a', class_='header__contacts-link header__contacts-link_city').text.strip()
     cards = soup.find_all('a', class_='card-sale card-sale_catalogue')
     # goods = soup.find('div', class_='card-sale__title').find('p').text.strip()
-    # print(city, len(cards))
+    print(city, len(cards))
     # print(goods)
 
     data = []
